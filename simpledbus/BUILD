@@ -6,6 +6,9 @@ cc_import(
 
 cc_library(
     name = "simpledbus",
+    copts = [
+        "-std=c++17",
+    ],
     srcs = [
         ":src/base/Connection.cpp",
         ":src/base/Exceptions.cpp",
@@ -21,7 +24,7 @@ cc_library(
         "src/base/*.h",
         "include/simpledbus/advanced/*.h",
         "include/simpledbus/base/*.h",
-        "include/simpledbus/external/*.h",
+        "include/simpledbus/external/*.hpp",
         "include/simpledbus/interfaces/*.h",
     ]),
     includes = [
@@ -30,6 +33,7 @@ cc_library(
     ],
     deps = [
         "@dbus",
+        "@fmt",
     ],
     visibility = ["//visibility:public"],
 )
