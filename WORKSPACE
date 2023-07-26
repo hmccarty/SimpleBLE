@@ -9,3 +9,9 @@ http_archive(
   urls = ["https://github.com/google/googletest/archive/5ab508a01f9eb089207ee87fd547d290da39d015.zip"],
   strip_prefix = "googletest-5ab508a01f9eb089207ee87fd547d290da39d015",
 )
+
+new_local_repository(
+    name = "dbus",
+    path = "/usr",
+    build_file = "//bazel:third_party/BUILD.dbus",
+)

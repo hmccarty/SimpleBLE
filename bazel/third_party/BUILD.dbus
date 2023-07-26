@@ -1,0 +1,6 @@
+cc_library(
+    name = "dbus",
+    hdrs = glob(["include/dbus-1.0/**/*.h"]),
+    includes = ["include/dbus-1.0"],
+    visibility = ["//visibility:public"],
+)
