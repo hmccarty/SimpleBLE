@@ -1,0 +1,42 @@
+
+#ifndef @PKG_NAME@_EXPORT_H
+#define @PKG_NAME@_EXPORT_H
+
+#ifdef @PKG_NAME@_STATIC_DEFINE
+#  define @PKG_NAME@_EXPORT
+#  define @PKG_NAME@_NO_EXPORT
+#else
+#  ifndef @PKG_NAME@_EXPORT
+#    ifdef @PKG_NAME@_EXPORTS
+        /* We are building this library */
+#      define @PKG_NAME@_EXPORT 
+#    else
+        /* We are using this library */
+#      define @PKG_NAME@_EXPORT 
+#    endif
+#  endif
+
+#  ifndef @PKG_NAME@_NO_EXPORT
+#    define @PKG_NAME@_NO_EXPORT 
+#  endif
+#endif
+
+#ifndef @PKG_NAME@_DEPRECATED
+#  define @PKG_NAME@_DEPRECATED __attribute__ ((__deprecated__))
+#endif
+
+#ifndef @PKG_NAME@_DEPRECATED_EXPORT
+#  define @PKG_NAME@_DEPRECATED_EXPORT @PKG_NAME@_EXPORT @PKG_NAME@_DEPRECATED
+#endif
+
+#ifndef @PKG_NAME@_DEPRECATED_NO_EXPORT
+#  define @PKG_NAME@_DEPRECATED_NO_EXPORT @PKG_NAME@_NO_EXPORT @PKG_NAME@_DEPRECATED
+#endif
+
+#if 0 /* DEFINE_NO_DEPRECATED */
+#  ifndef @PKG_NAME@_NO_DEPRECATED
+#    define @PKG_NAME@_NO_DEPRECATED
+#  endif
+#endif
+
+#endif /* @PKG_NAME@_EXPORT_H */

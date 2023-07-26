@@ -7,6 +7,7 @@ _skbuild
 
 /build_*
 /dist
+/bazel-*
 
 __pycache__
 *.egg-info
